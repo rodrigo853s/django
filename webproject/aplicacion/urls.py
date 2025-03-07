@@ -6,7 +6,8 @@ from aplicacion import views
 # viernes viene debajo de app/
 urlpatterns=[
     path('', views.index, name='index'),
-    path('viernes/', views.metodoViernes, name='viernes')
+    path('viernes/', views.metodoViernes, name='viernes'),
+    path('listas/', views.metodoListas, name='listas')
     
 ]
 
