@@ -14,3 +14,6 @@ def futbol(request):
         "equipo": nombre
     }
     return render(request, 'informacion/futbol.html', data)
+
+def jugadorers(request):
+    return render(request, 'informacion/jugadores.html')
