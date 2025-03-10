@@ -7,3 +7,10 @@ def index(request):
 
 def pelis(request):
     return render(request, 'informacion/pelis.html')
+
+def futbol(request):
+    nombre = "Club Atlético Independiente"
+    data = {
+        "equipo": nombre
+    }
+    return render(request, 'informacion/futbol.html', data)
