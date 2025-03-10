@@ -21,6 +21,7 @@ def metodoListas(request):
     return render(request, 'myapp/listas.html')
     
 
-
+def webPeliculas(request):
+    return render(request, 'myapp/peliculas.html')
 
 

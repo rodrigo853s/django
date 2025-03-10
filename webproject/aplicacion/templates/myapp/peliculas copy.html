@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/pelis.css'%}"> 
+    <script>
+        function cambiar(imagen){
+            imagen.src = "{% static 'images/hziuwquhtdtb1.jpg.webp' %}"
+        }
+    </script>
+    <style>
+        p{
+            color:red;
+        }
+        
+        body {
+        background-color: greenyellow;
+}
+    </style>
+</head>
+<body>
+    <a href="/app/">Home</a>
+    <h1>Harry Calahan</h1>
+    <img id="imagen" onclick="cambiar(imagen)" src="{% static 'images/gettyimages-529414045-612x612.jpg'%}"/>
+    <p>Make my day</p>
+
+    
+</body>
+</html>
