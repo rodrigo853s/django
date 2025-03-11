@@ -63,25 +63,4 @@ def colores(request):
     else:
         return render(request, 'informacion/colores.html')
 def saludo(request):
-    # Debemos preguntar de forma obligatoria si hemos recibido
-    # datos del formulario
-    if ('cajanombre' in request.POST):
-        nombreRecibido = request.POST['cajanombre']
-        context = {
-            "nombre": nombreRecibido
-        }
-        return render(request, 'informacion/saludo.html', context)
-    else:
-        return render(request, 'informacion/saludo.html')
-    
-def sumarNumeros(request):
-    if ('cajanumero1' in request.POST):
-        num1 = request.POST['cajanumero1']
-        num2 = request.POST['cajanumero2']
-        suma = int(num1) + int(num2)
-        context = {
-            "suma": suma
-        }
-        return render(request, 'informacion/sumarnumeros.html', context)
-    else:
-        return render(request, 'informacion/sumarnumeros.html')
+    return render(request, 'informacion/saludo.html')

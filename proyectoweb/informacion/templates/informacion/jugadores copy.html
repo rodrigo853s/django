@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jugadores</title>
+    
+</head>
+<body>
+    {% include 'informacion/menu.html' %}
+    <hr/>
+    <h1> Jugadores </h1>
+    <!-- RECORREMOS LOS NUMEROS QUE RECIBIMOS -->
+    <!-- {{ numeros }} -->
+    {% for valor in numeros %}
+        <h2>{{ valor }}</h2>
+    {% endfor %}
+    <table border="1">
+    <!-- AHORA CON UNA LISTA -->
+    <ul>
+        <li>9</li>
+        <li>12</li>
+        <li>48</li>
+        <li>127</li>
+    </ul>
+    <!-- AHORA RECORREMOS LA LISTA -->
+    <ul>
+    {% for valor in numeros %}
+    <li>{{ valor }}</li>
+    </ul>
+{% endfor %}
+        <tr>
+            <th>DATO</th>
+            <th>VALOR</th>
+        </tr>
+        <tr>
+            <td>Num</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>Num</td>
+            <td>7</td>
+        </tr>
+        <tr>
+            <td>Num</td>
+            <td>22</td>
+        </tr>
+        <tr>
+            <td>Num</td>
+            <td>45</td>
+        </tr>
+    </table>
+</body>
+</html>

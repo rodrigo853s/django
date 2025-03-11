@@ -15,16 +15,10 @@
 
 
     <table border="1">
+        {% for valor in numeros %}
         <tr>
-            <th>Nombre</th>
-            <th>Demarcación</th>
-            <th>Camiseta</th>
-        </tr>
-        {% for valor in jugadores %}
-        <tr>
-            <td>{{ valor.Nombre }}</td>
-            <td>{{ valor.Demarcacion }}</td>
-            <td>{{ valor.Numero }}</td>
+            <td>Num</td>
+            <td>{{ valor }}</td>
         </tr>
         {% endfor %}
 

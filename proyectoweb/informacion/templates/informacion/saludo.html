@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <hr>
+    {% include 'informacion/menu.html' %}
+    <hr/>
+    <h1> Saludo </h1>
+    <form method="post">
+        {% csrf_token %}
+        <label>Introduzca su nombre</label>
+        <input type="text" name="cajanombre" required/>
+        <br/>
+        
+        <button>
+            Send data
+        </button>
+        <h1 style="color: blue">
+            Bienvenido, Sr/Sra {{nombre}}
+        </h1>
+    </form>
+</body>
+</html>

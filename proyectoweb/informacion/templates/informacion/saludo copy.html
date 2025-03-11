@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <hr>
+    {% include 'informacion/menu.html' %}
+    <hr/>
+    <h1> Saludo </h1>
+    <form method="post">
+        {% csrf_token %}
+        <label>Introduzca su nombre</label>
+        <input type="text" name="cajanombre" required/>
+        <br/>
+        <label>Dame un número</label>
+        <input type="number" name="cajanumero"/>
+        <br/>
+        <label>Fecha</label>
+        <input type="date"/>
+        <br/>
+        <label>Rango</label>
+        <input type="range" min="1" max="15" value="1"/>
+        <br/>
+        <label>Deporte favorito</label>
+        <input type="radio" name="deporte" value="Futbol"/>Futbol
+        <input type="radio" name="deporte" value="Rugby"/>Rugby
+        <input type="radio" name="deporte" value="Tenis"/>Tenis
+        <br/>
+        <input type="checkbox"/>¿Te gusta Python?
+        <br/>
+        <button>
+            Send data
+        </button>
+    </form>
+</body>
+</html>

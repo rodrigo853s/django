@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% include 'informacion/menu.html' %}
+    <hr/>
+    <span style="color: goldenrod">
+       <h1>COLORES</h1> 
+    </span>
+    <ul>
+        <li>
+            <a href="/colores?micolor=blue">Azul</a>
+        </li>
+        <li>
+            <a href="/colores?micolor=red">Rojo</a>
+        </li>
+        <li>
+            <a href="/colores?micolor=green">Verde</a>
+        </li>
+    </ul>
+    <h2 style="color: {{colordibujo}}">
+        El color recibido es {{colordibujo}}
+    </h2>
+</body>
+</html>
