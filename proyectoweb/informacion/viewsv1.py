@@ -113,11 +113,7 @@ def tablaMultiplicar(request):
         lista = []
         for num in range(10):
             resultado = numero * (num +1)
-            operacion = str(numero) + " * " + str((num + 1))
-            lista.append({              
-                "operacion": operacion,
-                "resultado": resultado          
-            })
+            lista.append(resultado)
         context = {
             "tablamultiplicar": lista
         }
