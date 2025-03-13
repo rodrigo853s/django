@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Borra Dept.</title>
+</head>
+<body>
+    <hr/>
+    <h1 style="color: green" > 
+        Eliminar departamentos Oracle 
+        </h1>
+    {% include 'pages/menu.html' %}
+    <hr/>
+
+    <form method="post">
+        {%csrf_token%}
+        <label>Id Departamento</label>
+        <input type="number" name="cajanumero"/><br/>
+
+    <button>
+        Eliminar Departamento
+    </button>
+</body>
+</html>

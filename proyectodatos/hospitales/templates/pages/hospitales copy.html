@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospitales</title>
+</head>
+<body>
+    <hr/>
+    <h1 style="color: red" > 
+        Hospitales Oracle 
+        </h1>
+    {% include 'pages/menu.html' %}
+    <hr/>
+
+    <table border="3">
+        <tr>
+            <th>Code</th>
+            <th>Nombre</th>
+            <th>Dirección</th>
+        </tr>
+        {% for d in hospitales %}
+        <tr>
+            <td>{{ d.hosp_cod }}</td>
+            <td>{{ d.nombre }}</td>
+            <td>{{ d.direccion }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

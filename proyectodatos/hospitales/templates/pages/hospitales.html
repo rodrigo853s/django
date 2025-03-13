@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospitales</title>
+    <head>
+        <title>HTML Table with CSS Borders</title>
+        <style>
+            table {
+                border-collapse: collapse;
+                width: 50%;
+            }
+            th, td {
+                border: 2px groove blueviolet;
+                padding: 8px;
+                text-align: left;
+                border-radius: 20px;
+                border-color: #96D4D4;
+                background-color: #96D4D4;
+            }
+            th {
+                background-color: #f2f2f2;   
+            }
+        </style>
+    </head>
+</head>
+<body>
+    <hr/>
+    <h1 style="color: red" > 
+        Hospitales Oracle 
+        </h1>
+    {% include 'pages/menu.html' %}
+    <hr/>
+
+    <table border="3" >
+        <tr>
+            <th>Code</th>
+            <th>Nombre</th>
+            <th>Dirección</th>
+        </tr>
+        {% for d in hospitales %}
+        <tr>
+            <td>{{ d.hosp_cod }}</td>
+            <td>{{ d.nombre }}</td>
+            <td>{{ d.direccion }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

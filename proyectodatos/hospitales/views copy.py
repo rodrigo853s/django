@@ -31,25 +31,9 @@ def insertarDepartamento(request):
         nombre = request.POST['cajanombre']
         localidad = request.POST['cajalocalidad']
         registros = servicio.insertDepartamento(numero, nombre, localidad)
-        departamentos = servicio.getDepartamentos
         context = {
-        # "mensaje": "Registros insertados: " + str(registros)
-        "departamentos": departamentos
+            "mensaje": "Registros insertados: " + str(registros) 
         }
-        return render(request, 'pages/departamentos.html', context)
+        return render(request, 'pages/insertardepartamento.html', context)
     else:
         return render(request, 'pages/insertardepartamento.html')
-    
-def eliminarDepartamento(request):
-    if ('cajanumero' in request.POST):
-        servicio = ServiceDepartamentos()
-        numero = request.POST['cajanumero']
-        registros = servicio.eliminarDepartamento(numero)
-        departamentos = servicio.getDepartamentos
-        context = {
-        "departamentos": departamentos
-        }
-        return render(request, 'pages/departamentos.html', context)
-    else:
-        return render(request, 'pages/deletedepartamento.html')
-
