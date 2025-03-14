@@ -63,20 +63,6 @@ class ServiceDepartamentos:
         # Si queremos, obtenemos los registros
         return registros 
     
-    # Detalles departamento
-
-    def detallesDepartamento(self, numero):
-        sql = "select * from DEPT where DEPT_NO = :p1"
-        cursor = self.connection.cursor()
-        cursor.execute(sql, (numero, ))
-        row = cursor.fetchone()
-        dept = Departamento()
-        dept.numero = row[0]
-        dept.nombre = row[1]
-        dept.localidad = row[2]
-        cursor.close()
-        return dept
-    
 class Hospital:
     hosp_cod = 0
     nombre = ""
@@ -101,28 +87,5 @@ class ServiceHospitales:
         cursor.close()
         return lista
 
-class Empleado:
-    emp_no = 0
-    apellido = ""
-    oficio = ""
-    salario = 0
 
-class ServiceEmpleados:
-    def __init__(self):
-        self.connection = oracledb.connect(user='SYSTEM'
-            ,password='oracle', dsn='localhost/xe')
-
-    def empleadosDepartamento(self):
-        sql = "select * from EMP"
-        cursor = self.connection.cursor()
-        cursor.execute(sql)
-        lista = []
-        for row in cursor:
-            emp = Empleado()
-            emp.hosp_no = row[0]
-            emp.apellido = row[1]
-            emp.oficio = row[3]
-            emp.salario = row[5]
-            lista.append(emp)
-        cursor.close()
-        return lista
+                                           

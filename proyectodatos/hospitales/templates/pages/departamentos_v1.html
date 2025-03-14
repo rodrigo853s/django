@@ -18,26 +18,12 @@
             <th>ID</th>
             <th>Nombre</th>
             <th>Localidad</th>
-            <th>Detalles</th>
-            <th>Eliminar</th>
-            <th>Update</th>
         </tr>
         {% for d in departamentos%}
         <tr>
             <td>{{ d.numero }}</td>
             <td>{{ d.nombre }}</td>
             <td>{{ d.localidad }}</td>
-            <td>
-                <a href="/detallesdepartamento?id={{d.numero}}">Detalles</a>
-            </td>
-            
-            <td>
-                <a href="/deletedepartamento?id={{d.numero}}">Eliminar</a>
-            </td>
-
-            <td>
-                <a href="/updatedepartamento?id={{d.numero}}">Update</a>
-            </td>
         </tr>
         {% endfor %}
     </table>

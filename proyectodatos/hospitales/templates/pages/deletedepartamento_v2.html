@@ -13,18 +13,13 @@
     {% include 'pages/menu.html' %}
     <hr/>
 
-    <h2 style="color:red">¿Está seguro de eliminar el departamento
-        {{numero}}?
-    </h2>
     <form method="post">
-        {% csrf_token %}
-        <label>Id departamento</label>
-        <input type="hidden" name="cajanumero" 
-        value="{{numero}}"/>
-        <button>
-            Delete 
-        </button>
-    </form>
-    <h2 style="color:red">{{mensaje}}</h2>
+        {%csrf_token%}
+        <label>Id Departamento</label>
+        <input type="number" name="cajanumero"/><br/>
+        
+    <button>
+        Eliminar Departamento
+    </button>
 </body>
 </html>

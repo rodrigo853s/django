@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actualiza Depto.</title>
+</head>
+<body>
+    <hr/>
+    <h1 style="color: grey" > 
+        Actualizar departamentos Oracle 
+        </h1>
+    {% include 'pages/menu.html' %}
+    <hr/>
+    <form method="post">
+        {% csrf_token %}
+        <label>Id departamento</label>
+        <input type="number" name="cajanumero" 
+        value="{{departamento.numero}}"/><br/>
+        <label>Nombre</label>
+        <input type="text" name="cajanombre"
+        value="{{departamento.nombre}}"/><br/>
+        <label>Localidad</label>
+        <input type="text" name="cajalocalidad"
+        value="{{departamento.localidad}}"/><br/>
+        <button>Update</button>
+    </form>
+    <h1 style="color:blue">{{mensaje}}</h1>
+    <hr/>
+    <h2 style="color: goldenrod">
+        {{mensaje}}
+    </h2>
+</body>
+</html>

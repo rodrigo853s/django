@@ -20,7 +20,6 @@
             <th>Localidad</th>
             <th>Detalles</th>
             <th>Eliminar</th>
-            <th>Update</th>
         </tr>
         {% for d in departamentos%}
         <tr>
@@ -33,10 +32,6 @@
             
             <td>
                 <a href="/deletedepartamento?id={{d.numero}}">Eliminar</a>
-            </td>
-
-            <td>
-                <a href="/updatedepartamento?id={{d.numero}}">Update</a>
             </td>
         </tr>
         {% endfor %}

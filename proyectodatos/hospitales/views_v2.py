@@ -44,23 +44,18 @@ def eliminarDepartamento(request):
     if ('cajanumero' in request.POST):
         servicio = ServiceDepartamentos()
         numero = request.POST['cajanumero']
-        registros = servicio.eliminarDepartamento(numero);
+        registros = servicio.eliminarDepartamento(numero)
+        departamentos = servicio.getDepartamentos
         context = {
-            "mensaje": "Registros eliminados: " + str(registros)
+        "departamentos": departamentos
         }
-        return render(request, 'pages/deletedepartamento.html', context)
-    elif ('id' in request.GET):
-        numero = request.GET['id']
-        context = {
-            "numero": numero
-        }
-        return render(request, 'pages/deletedepartamento.html', context)
+        return render(request, 'pages/departamentos.html', context)
     else:
         return render(request, 'pages/deletedepartamento.html')
 
 def updateDepartamento(request):
-    servicio = ServiceDepartamentos()
-    if ('cajanumero' in request.POST):        
+    if ('cajanumero' in request.POST):
+        servicio = ServiceDepartamentos()
         numero = request.POST['cajanumero']
         nombre = request.POST['cajanombre']
         localidad = request.POST['cajalocalidad']
@@ -69,12 +64,6 @@ def updateDepartamento(request):
         context = {
         #"departamentos": departamentos
         "mensaje": "Registros insertados: " + str(registros)
-        }
-    elif ('id' in request.GET):
-        numero = request.GET['id']
-        departamento = servicio.detallesDepartamento(numero)
-        context = {
-            "departamento": departamento
         }
         #return render(request, 'pages/departamentos.html', context)
         return render(request, 'pages/updatedepartamento.html', context)
@@ -93,6 +82,3 @@ def detallesDepartamento(request):
         return render(request, 'pages/detallesdepartamento.html', context)
     else:
         return render(request, 'pages/detallesdepartamento.html')
-    
-def empleadosDepartamento(request):
-    return render(request, 'pages/empleadosdepartamento.html')
