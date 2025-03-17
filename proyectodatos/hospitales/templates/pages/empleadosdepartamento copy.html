@@ -14,12 +14,8 @@
     <hr/>
     <form method="post">
         {% csrf_token %}
-        <label>Seleccione departamento:</label>
-        <select name="iddepartamento">
-            {% for dept in departamentos %}
-            <option value="{{dept.numero}}">{{dept.nombre}}</option>
-            {% endfor %}
-        </select>
+        <label>Introduzca ID departamento:</label>
+        <input type="number" name="iddepartamento"/>
         <button>
             Buscar empleados
         </button>
@@ -40,6 +36,5 @@
         </tr>
         {% endfor %}
     </table>
-
 </body>
 </html>
