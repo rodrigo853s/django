@@ -9,20 +9,18 @@
 </head>
 <body class="bg-dark text-light">
     {% include 'pages/menu.html' %}
-    <div class="container py-5">
-        <h1 class="text-center">PERSONAJES</h1>
-        <div class="d-flex flex-wrap justify-content-center">
-            {% for s in personajes %}
-            <div class="card m-3" style="width: 18rem;">
-                <img src="{{ s.imagen }}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">{{ s.personaje }}</h5>
-                    <p class="card-text">Serie: {{ s.serie }}</p>
-                    <a href="/modificarpersonaje?idpersonaje={{s.idPersonaje}}" class="btn btn-primary">Edit character</a>
-                </div>
+    <div class="container text-center py-5">
+        <h1>Proyecto chulo televisión</h1>
+        {% for s in series %}
+        <div class="card" style="width: 18rem;">
+            <img src="{{s.imagen}}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{s.titulo}}</h5>
+              <p class="card-text">Año: {{s.year}}</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
             </div>
-            {% endfor %}
-        </div>
+          </div>
+        {% endfor %}
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>

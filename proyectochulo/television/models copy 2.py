@@ -66,28 +66,4 @@ class ServiceSeries:
         cursor.close()
         return lista
 
-    def updatePersonaje(self, idPersonaje, nombre, imagen, idSerie):
-        sql = """
-            update PERSONAJES set PERSONAJE=:p1, IMAGEN=:p2, IDSERIE=:p3 \
-                where IDPERSONAJE = :p4
-            """
-        cursor = self.connection.cursor()
-        cursor.execute(sql, (nombre, imagen, idSerie, idPersonaje))
-        self.connection.commit()
-        cursor.close()
-    
-    def findPersonaje(self, idPersonaje):
-        sql = "select * from PERSONAJES where IDPERSONAJE = :p1"
-        cursor = self.connection.cursor()
-        cursor.execute(sql, (idPersonaje, ))
-        row = cursor.fetchone()
-        person = Personaje()
-        person.idPersonaje = row[0]
-        person.personaje = row[1]
-        person.imagen = row[2]
-        person.idSerie = row[3]
-        cursor.close()
-        return person
-
-   
 
