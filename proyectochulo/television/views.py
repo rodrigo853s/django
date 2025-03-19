@@ -59,3 +59,6 @@ def modificarPersonaje(request):
     else:
         return render(request, 'pages/modificarpersonaje.html')
  
+
+ #####
+
